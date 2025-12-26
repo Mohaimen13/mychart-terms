@@ -1,0 +1,71 @@
+name: mychart_fhir_app
+description: A patient-facing mobile application integrating with Epic Systems via SMART on FHIR
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # HTTP & API
+  http: ^1.1.0
+  dio: ^5.4.0
+  
+  # FHIR
+  fhir: ^0.7.0
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Secure Storage
+  flutter_secure_storage: ^9.0.0
+  
+  # Localization
+  intl: ^0.18.1
+  
+  # URL Launcher for OAuth
+  url_launcher: ^6.2.2
+  
+  # Deep Linking
+  uni_links: ^0.5.1
+  
+  # JSON Serialization
+  json_annotation: ^4.8.1
+  
+  # Utilities
+  equatable: ^2.0.5
+  uuid: ^4.2.1
+  crypto: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/fonts/
+  
+  # Fonts
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+    - family: NotoSansArabic
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Regular.ttf
+        - asset: assets/fonts/NotoSansArabic-Bold.ttf
+          weight: 700
+

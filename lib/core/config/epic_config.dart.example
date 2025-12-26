@@ -1,0 +1,42 @@
+/// Epic Sandbox Configuration Template
+/// 
+/// Copy this file to epic_config.dart and update with your actual credentials
+/// DO NOT commit epic_config.dart to version control
+
+class EpicConfig {
+  // Epic Sandbox Base URL
+  // Example: https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4
+  static const String baseUrl = 'https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4';
+  
+  // OAuth Configuration
+  static const String authorizationEndpoint = 'https://fhir.epic.com/interconnect-fhir-oauth/oauth2/authorize';
+  static const String tokenEndpoint = 'https://fhir.epic.com/interconnect-fhir-oauth/oauth2/token';
+  
+  // SMART on FHIR Configuration
+  static const String smartLaunchEndpoint = 'https://fhir.epic.com/interconnect-fhir-oauth/oauth2/smart/v1/authorize';
+  
+  // Client Credentials (Register your app at open.epic.com)
+  // TODO: Replace with your actual client ID
+  static const String clientId = 'YOUR_CLIENT_ID_HERE';
+  
+  // Redirect URI (must match the one registered in Epic)
+  // For mobile apps, use a custom URL scheme
+  static const String redirectUri = 'mychartfhir://oauth/callback';
+  
+  // Scopes required for patient-facing app
+  static const List<String> scopes = [
+    'patient/*.read',
+    'patient/Patient.read',
+    'patient/Observation.read',
+    'patient/MedicationRequest.read',
+    'patient/Appointment.read',
+    'offline_access', // For refresh tokens
+  ];
+  
+  // FHIR Resource Endpoints
+  static String get patientEndpoint => '$baseUrl/Patient';
+  static String get observationEndpoint => '$baseUrl/Observation';
+  static String get medicationRequestEndpoint => '$baseUrl/MedicationRequest';
+  static String get appointmentEndpoint => '$baseUrl/Appointment';
+}
+
